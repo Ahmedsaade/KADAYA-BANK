@@ -18,6 +18,75 @@
     --muted: #94a3b8;
     --border: #2d2d4a;
     --shadow: 0 4px 24px rgba(108,63,197,0.18);
+    --nav-bg: #16162a;
+    --btn-bg: #1a1a2e;
+    --tf-bg: #111124;
+    --mcq-bg: #111124;
+    --opt-label-bg: #2a2a45;
+    --progress-bg: #16162a;
+  }
+
+  /* ===== DARK MODE ===== */
+  [data-theme="dark"] {
+    --primary: #818cf8;
+    --secondary: #fbbf24;
+    --accent: #f87171;
+    --success: #34d399;
+    --wrong: #f87171;
+    --bg: #0d0d0d;
+    --card: #1a1a1a;
+    --text: #e5e7eb;
+    --muted: #6b7280;
+    --border: #2d2d2d;
+    --shadow: 0 4px 24px rgba(0,0,0,0.5);
+    --nav-bg: #111111;
+    --btn-bg: #1a1a1a;
+    --tf-bg: #0d0d0d;
+    --mcq-bg: #0d0d0d;
+    --opt-label-bg: #2a2a2a;
+    --progress-bg: #111111;
+  }
+
+  /* ===== WHITE / LIGHT MODE ===== */
+  [data-theme="light"] {
+    --primary: #5b21b6;
+    --secondary: #d97706;
+    --accent: #dc2626;
+    --success: #059669;
+    --wrong: #dc2626;
+    --bg: #f8f7ff;
+    --card: #ffffff;
+    --text: #1e1b4b;
+    --muted: #6b7280;
+    --border: #e5e3f5;
+    --shadow: 0 4px 24px rgba(91,33,182,0.10);
+    --nav-bg: #f0eeff;
+    --btn-bg: #ffffff;
+    --tf-bg: #f8f7ff;
+    --mcq-bg: #f8f7ff;
+    --opt-label-bg: #ede9fe;
+    --progress-bg: #ede9fe;
+  }
+
+  /* ===== STUDY MODE (سيبيا هادي للعيون) ===== */
+  [data-theme="study"] {
+    --primary: #7c5c2e;
+    --secondary: #b07d3a;
+    --accent: #c0392b;
+    --success: #27ae60;
+    --wrong: #c0392b;
+    --bg: #fdf6e3;
+    --card: #fef9ee;
+    --text: #3d2b1f;
+    --muted: #8a7060;
+    --border: #e8d8b5;
+    --shadow: 0 4px 24px rgba(124,92,46,0.12);
+    --nav-bg: #f5edd6;
+    --btn-bg: #fef9ee;
+    --tf-bg: #fdf6e3;
+    --mcq-bg: #fdf6e3;
+    --opt-label-bg: #f0e4c5;
+    --progress-bg: #f5edd6;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -82,7 +151,7 @@
 
   /* Progress */
   .progress-bar-wrap {
-    background: #16162a;
+    background: var(--progress-bg);
     padding: 14px 24px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.4);
     display: flex;
@@ -120,7 +189,7 @@
     overflow-x: auto;
     gap: 8px;
     padding: 16px 24px;
-    background: #16162a;
+    background: var(--nav-bg);
     border-bottom: 1px solid var(--border);
     scrollbar-width: none;
   }
@@ -129,7 +198,7 @@
     padding: 8px 18px;
     border-radius: 20px;
     border: 2px solid var(--border);
-    background: #1a1a2e;
+    background: var(--btn-bg);
     color: var(--muted);
     font-family: 'Cairo', sans-serif;
     font-size: 0.85rem;
@@ -220,7 +289,7 @@
     padding: 10px 0;
     border-radius: 10px;
     border: 2px solid var(--border);
-    background: #111124;
+    background: var(--tf-bg);
     color: var(--text);
     font-family: 'Cairo', sans-serif;
     font-size: 0.9rem;
@@ -232,7 +301,7 @@
     justify-content: center;
     gap: 6px;
   }
-  .tf-btn:hover:not(:disabled) { border-color: var(--primary); color: #c4a0ff; background: #1e1e38; }
+  .tf-btn:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); background: var(--card); }
   .tf-btn.selected-correct { background: rgba(16,185,129,0.15); border-color: var(--success); color: #34d399; }
   .tf-btn.selected-wrong { background: rgba(239,68,68,0.15); border-color: var(--wrong); color: #f87171; }
   .tf-btn.show-correct { background: rgba(16,185,129,0.15); border-color: var(--success); color: #34d399; }
@@ -249,7 +318,7 @@
     padding: 10px 14px;
     border-radius: 10px;
     border: 2px solid var(--border);
-    background: #111124;
+    background: var(--mcq-bg);
     color: var(--text);
     font-family: 'Cairo', sans-serif;
     font-size: 0.88rem;
@@ -261,11 +330,11 @@
     align-items: center;
     gap: 10px;
   }
-  .mcq-btn:hover:not(:disabled) { border-color: var(--primary); background: #1e1e38; }
+  .mcq-btn:hover:not(:disabled) { border-color: var(--primary); background: var(--card); }
   .mcq-btn .opt-label {
     min-width: 26px; height: 26px;
     border-radius: 6px;
-    background: #2a2a45;
+    background: var(--opt-label-bg);
     font-size: 0.8rem;
     font-weight: 700;
     display: flex; align-items: center; justify-content: center;
@@ -435,7 +504,7 @@
     padding: 4px 10px;
     border-radius: 8px;
     border: 2px solid var(--border);
-    background: #1a1a2e;
+    background: var(--btn-bg);
     color: var(--text);
     font-family: 'Cairo', sans-serif;
     font-size: 0.82rem;
@@ -444,7 +513,47 @@
     transition: all 0.2s;
     white-space: nowrap;
   }
-  .font-btn:hover { border-color: var(--primary); color: #c4a0ff; }
+  .font-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+  /* ===== THEME SWITCHER ===== */
+  .theme-switcher {
+    display: flex;
+    gap: 4px;
+    flex-shrink: 0;
+    align-items: center;
+  }
+  .theme-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 2px solid var(--border);
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    background: var(--btn-bg);
+    position: relative;
+  }
+  .theme-btn:hover { transform: scale(1.1); border-color: var(--primary); }
+  .theme-btn.active { border-color: var(--primary); box-shadow: 0 0 0 2px var(--primary); }
+  .theme-btn[data-theme="default"] { background: #1a1a2e; }
+  .theme-btn[data-theme="dark"] { background: #0d0d0d; }
+  .theme-btn[data-theme="light"] { background: #ffffff; }
+  .theme-btn[data-theme="study"] { background: #fdf6e3; }
+
+  /* Light mode header override */
+  [data-theme="light"] .progress-bar-wrap,
+  [data-theme="light"] .chapter-nav { border-color: var(--border); }
+  [data-theme="light"] .btn-primary:hover { background: #3b0764; }
+  [data-theme="light"] .header { background: linear-gradient(135deg, #5b21b6 0%, #3b0764 50%, #1e0533 100%); }
+
+  /* Study mode overrides */
+  [data-theme="study"] .header { background: linear-gradient(135deg, #7c5c2e 0%, #5a3e1e 50%, #3d2b10 100%); }
+  [data-theme="study"] .btn-primary:hover { background: #5a3e1e; }
+  [data-theme="study"] footer { color: #8a7060 !important; }
+
 </style>
 </head>
 <body>
@@ -461,6 +570,12 @@
   <div class="font-controls">
     <button class="font-btn" onclick="changeFontSize(-1)" title="تصغير الخط">A-</button>
     <button class="font-btn" onclick="changeFontSize(1)" title="تكبير الخط">A+</button>
+  </div>
+  <div class="theme-switcher">
+    <button class="theme-btn active" data-theme="default" onclick="setTheme('default')" title="الثيم الأصلي">🟣</button>
+    <button class="theme-btn" data-theme="dark" onclick="setTheme('dark')" title="دارك مود">⚫</button>
+    <button class="theme-btn" data-theme="light" onclick="setTheme('light')" title="وايت مود">⚪</button>
+    <button class="theme-btn" data-theme="study" onclick="setTheme('study')" title="مود المذاكرة 📚">📚</button>
   </div>
 </div>
 
@@ -1342,6 +1457,30 @@ function reshuffleAll() {
   renderShuffle();
   window.scrollTo({top:0, behavior:'smooth'});
 }
+
+// ========== THEME SWITCHER ==========
+function setTheme(theme) {
+  const html = document.documentElement;
+  if (theme === 'default') {
+    html.removeAttribute('data-theme');
+  } else {
+    html.setAttribute('data-theme', theme);
+  }
+  // Update active button
+  document.querySelectorAll('.theme-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.theme === theme);
+  });
+  // Save preference
+  try { localStorage.setItem('examTheme', theme); } catch(e) {}
+}
+
+// Restore saved theme on load
+(function() {
+  try {
+    const saved = localStorage.getItem('examTheme');
+    if (saved) setTheme(saved);
+  } catch(e) {}
+})();
 
 // ========== FONT SIZE ==========
 let fontSize = 100; // percent
